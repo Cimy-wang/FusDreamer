@@ -206,10 +206,10 @@ The corresponding code will be released.
 ## The experimental results with larger training samples.
    The training samples are set following Ref. [AM<sup>3</sup>Net [IEEE TCSVT'2022]](https://ieeexplore.ieee.org/document/9698196).
 ### Houston 2013 dataset 
-   ![My Image](./img/houston13-L.png)
+![My Image](./img/houston13-L.png)
 ### Houston 2018 dataset 
 ![My Image](./img/houston18-L.png)
-### MUULF dataset 
-![My Image](./img/muulf-L.png)
+### MUUFL dataset 
+![My Image](./img/muufl-L.png)
 ### Trento dataset 
 ![My Image](./img/trento-L.png)
