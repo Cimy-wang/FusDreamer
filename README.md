@@ -3,8 +3,9 @@ Official implementation of "A label-efficient remote sensing world model for mul
 
 The corresponding code will be released.
 
-## The prompts of the Houston 2013 dataset.
+## The designed prompts in this paper.
 
+### Houston 2013 dataset
 | Classes | Prompts |
 |-------------|-------------|
 |  grass healthy|A hyperspectral and lidar multimodal data of grass healthy|
@@ -68,7 +69,7 @@ The corresponding code will be released.
 |           | The running track is crimson 									|
 |       	| There is grass synthetic in the middle of the running track 	|	
 
-## The prompts of the Houston 2018 dataset.
+### Houston 2018 dataset
 
    | Classes | Prompts |
 |-------------|-------------|
@@ -154,7 +155,7 @@ The corresponding code will be released.
    |			   | The stadium seats are an ellipse|
 
    
-## The prompts of the MUUFL dataset.
+###  MUUFL dataset
    | Classes | Prompts |
    |-------------|-------------|
    |  tree  |A hyperspectral and lidar multimodal data of tree|
