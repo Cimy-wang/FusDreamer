@@ -1,6 +1,13 @@
 # RS-FusDreamer
 Official implementation of "A label-efficient remote sensing world model for multimodal data fusion"
 
+## The prompts of the Houston 2013 dataset.
+
+
+## The prompts of the Houston 2018 dataset.
+
+
+
    | Classes | Prompts |
 |-------------|-------------|
    | grass healthy | A hyperspectral and lidar multimodal data of grass healthy |
@@ -83,3 +90,6 @@ Official implementation of "A label-efficient remote sensing world model for mul
    |			   |There is artificial turf in the middle of the stadium seats|
    |               | The height of stadium seats is much higher than that of artificial turf|
    |			   | The stadium seats are an ellipse|
+
+   
+## The prompts of the MUUFL dataset.
