@@ -155,7 +155,7 @@ The corresponding code will be released.
 
    
 ## The prompts of the MUUFL dataset.
-      | Classes | Prompts |
+   | Classes | Prompts |
    |-------------|-------------|
    |  tree  |A hyperspectral and lidar multimodal data of tree|
    |			   |The trees beside road|
@@ -203,5 +203,6 @@ The corresponding code will be released.
    |			   |Cloth panels are located next to the trees|
 
 
-## The experimental result on the Houston 2013 dataset with larger training samples following Ref. [AM<sup>3</sup>Net [IEEE TCSVT'2022]](https://ieeexplore.ieee.org/document/9698196).
-   ![My Image](./img/houston13-L.png.png)
+## The experimental result on the Houston 2013 dataset with larger training samples.
+   The training samples are set following Ref. [AM<sup>3</sup>Net [IEEE TCSVT'2022]](https://ieeexplore.ieee.org/document/9698196).
+   ![My Image](./img/houston13-L.png)
