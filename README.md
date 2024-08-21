@@ -7,6 +7,9 @@ Official implementation of "A label-efficient remote sensing world model for mul
    |               | The grass healthy is next to the road |
    |               | The grass healthy is dark green |
    |               | The spectral value of grass healthy is higher than that of the grass stressed  |
+
+
+   
    | — | — |
    |   |   |
    |   |   |
