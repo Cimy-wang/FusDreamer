@@ -2,7 +2,7 @@
 Official implementation of "A label-efficient remote sensing world model for multimodal data fusion"
 
    | Classes | Prompts |
-   | — | — |
+|-------------|-------------|
    | grass healthy | A hyperspectral and lidar multimodal data of grass healthy |
    |               | The grass healthy is next to the road |
    |               | The grass healthy is dark green |
