@@ -5,68 +5,68 @@ The corresponding code will be released.
 
 ## The prompts of the Houston 2013 dataset.
 
-		| Classes | Prompts |
-	|-------------|-------------|
-	|  grass healthy|A hyperspectral and lidar multimodal data of grass healthy|
-	|			   |The grass healthy is next to the road|
-	|               |The grass healthy is dark green|
-	|			   |The spectral value of grass healthy is higher than that of the grass stressed|
-	|grass stressed |A hyperspectral and lidar multimodal data of grass stressed|
-	|			   |The grass stressed is closer to the road and parking lots|
-	|			   |The grass stressed is pale green|
-	|			   |The shape of the grass stressed is irregular|
-	|grass synthetic|A hyperspectral and lidar multimodal data of grass synthetic|
-	|			|The grass synthetic is located inside the running track 				|
-	|           |The shape of grass synthetic is a fixed-size rectangle 				|
-	|           |The spectrak value transformation interval of grass synthetic is small |
-	|	trees  |A hyperspectral and lidar multimodal data of trees|				
-	|           | The trees beside road            |
-	|           | The trees appear as small circles|
-	|           | Trees are higher than grass      |
-	|soil  |A hyperspectral and lidar multimodal data of soil|	
-	|           | The sail is tan						|
-	|           | The shape of the soil is irregular 	|
-	|           | The surface of soil is not smooth 	|
-	|	water   |A hyperspectral and lidar multimodal data of water|	
-	|    		|The water has a smooth surface			|
-	|           | Trees grew along the water 			|
-	|           | The water appears dark blue or black |
-	|	residential|A hyperspectral and lidar multimodal data of residential|	
-	|     		| Residential are densely packed 				|
-	|           | Residential buildings appear as small blocks |
-	|           | There are trees near the residential 			|
-	|	commercial|A hyperspectral and lidar multimodal data of commercial|	
-	|    		| The shapes of commercial are inconsistent 					|
-	|           | Commercial appear as large blocks 							|
-	|           | There are parking lot 1 and parking lot 2 near the commercial |
-	|	road|A hyperspectral and lidar multimodal data of road|	
-	|    		| Trees grew along the road 					|
-	|           | The road appear as elongated strip shape 		|
-	|           | Roads are narrower than highways and railways |
-	|	highway|A hyperspectral and lidar multimodal data of highway|	
-	|			| The highway is strip-shaped 									|
-	|           | Cars on the highway are discontinuous							|
-	|           | Highways are wider than railways								|
-	|	railway|A hyperspectral and lidar multimodal data of railway|
-	|     		| The railway is strip-shaped 									|
-	|           | The curvature of the railway is smooth 						|
-	|           | Trains on the railway are continuous							|	
-	|	parking lot 1|A hyperspectral and lidar multimodal data of parking lot 1|
-	|           | The area of parking lot 1 is empty 							|
-	|           | The parking lot 1 is next to the road 						|
-	|           | the parking lot 1 is near buildings 							|	
-	|	parking lot 2|A hyperspectral and lidar multimodal data of parking lot 2|	
-	|     		| The colors of parking lot 2 are messed up 					|
-	|           | The parking lot 2 is next to the road 						|
-	|           | the parking lot 2 is near buildings 							|
-	|	tennis court|A hyperspectral and lidar multimodal data of tennis court|	
-	|    		| There is also a crimson running track next to the tennis court|
-	|           | The height is close to the running track						|
-	|           | Tennis court is a regular rectangle							|
-	|	running track|A hyperspectral and lidar multimodal data of running track|
-	|     		| The running track is an ellipse 								|
-	|           | The running track is crimson 									|
-	|       	| There is grass synthetic in the middle of the running track 	|	
+| Classes | Prompts |
+|-------------|-------------|
+|  grass healthy|A hyperspectral and lidar multimodal data of grass healthy|
+|			   |The grass healthy is next to the road|
+|               |The grass healthy is dark green|
+|			   |The spectral value of grass healthy is higher than that of the grass stressed|
+|grass stressed |A hyperspectral and lidar multimodal data of grass stressed|
+|			   |The grass stressed is closer to the road and parking lots|
+|			   |The grass stressed is pale green|
+|			   |The shape of the grass stressed is irregular|
+|grass synthetic|A hyperspectral and lidar multimodal data of grass synthetic|
+|			|The grass synthetic is located inside the running track 				|
+|           |The shape of grass synthetic is a fixed-size rectangle 				|
+|           |The spectrak value transformation interval of grass synthetic is small |
+|	trees  |A hyperspectral and lidar multimodal data of trees|				
+|           | The trees beside road            |
+|           | The trees appear as small circles|
+|           | Trees are higher than grass      |
+|soil  |A hyperspectral and lidar multimodal data of soil|	
+|           | The sail is tan						|
+|           | The shape of the soil is irregular 	|
+|           | The surface of soil is not smooth 	|
+|	water   |A hyperspectral and lidar multimodal data of water|	
+|    		|The water has a smooth surface			|
+|           | Trees grew along the water 			|
+|           | The water appears dark blue or black |
+|	residential|A hyperspectral and lidar multimodal data of residential|	
+|     		| Residential are densely packed 				|
+|           | Residential buildings appear as small blocks |
+|           | There are trees near the residential 			|
+|	commercial|A hyperspectral and lidar multimodal data of commercial|	
+|    		| The shapes of commercial are inconsistent 					|
+|           | Commercial appear as large blocks 							|
+|           | There are parking lot 1 and parking lot 2 near the commercial |
+|	road|A hyperspectral and lidar multimodal data of road|	
+|    		| Trees grew along the road 					|
+|           | The road appear as elongated strip shape 		|
+|           | Roads are narrower than highways and railways |
+|	highway|A hyperspectral and lidar multimodal data of highway|	
+|			| The highway is strip-shaped 									|
+|           | Cars on the highway are discontinuous							|
+|           | Highways are wider than railways								|
+|	railway|A hyperspectral and lidar multimodal data of railway|
+|     		| The railway is strip-shaped 									|
+|           | The curvature of the railway is smooth 						|
+|           | Trains on the railway are continuous							|	
+|	parking lot 1|A hyperspectral and lidar multimodal data of parking lot 1|
+|           | The area of parking lot 1 is empty 							|
+|           | The parking lot 1 is next to the road 						|
+|           | the parking lot 1 is near buildings 							|	
+|	parking lot 2|A hyperspectral and lidar multimodal data of parking lot 2|	
+|     		| The colors of parking lot 2 are messed up 					|
+|           | The parking lot 2 is next to the road 						|
+|           | the parking lot 2 is near buildings 							|
+|	tennis court|A hyperspectral and lidar multimodal data of tennis court|	
+|    		| There is also a crimson running track next to the tennis court|
+|           | The height is close to the running track						|
+|           | Tennis court is a regular rectangle							|
+|	running track|A hyperspectral and lidar multimodal data of running track|
+|     		| The running track is an ellipse 								|
+|           | The running track is crimson 									|
+|       	| There is grass synthetic in the middle of the running track 	|	
 
 ## The prompts of the Houston 2018 dataset.
 
