@@ -201,3 +201,7 @@ The corresponding code will be released.
    |			   |Cloth panels are four regular rectangles|
    |               |Cloth panels cover the mixed ground surface|
    |			   |Cloth panels are located next to the trees|
+
+
+## The experimental result on the Houston 2013 dataset with larger training samples following Ref. [AM<sup>3</sup>Net [IEEE TCSVT'2022]](https://ieeexplore.ieee.org/document/9698196).
+   ![My Image](./img/houston13-L.png.png)
