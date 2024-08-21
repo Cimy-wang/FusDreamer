@@ -1,12 +1,13 @@
 # RS-FusDreamer
 Official implementation of "A label-efficient remote sensing world model for multimodal data fusion"
 
+The corresponding code will be released.
+
 ## The prompts of the Houston 2013 dataset.
 
 
+
 ## The prompts of the Houston 2018 dataset.
-
-
 
    | Classes | Prompts |
 |-------------|-------------|
@@ -93,3 +94,49 @@ Official implementation of "A label-efficient remote sensing world model for mul
 
    
 ## The prompts of the MUUFL dataset.
+      | Classes | Prompts |
+   |-------------|-------------|
+   |  tree  |A hyperspectral and lidar multimodal data of tree|
+   |			   |The trees beside road|
+   |               |The trees appear as small circles|
+   |			   |Trees are higher than grass|
+   |   mostly grass   |A hyperspectral and lidar multimodal data of mostly grass|
+   |			   |The mostly grass is next to the road|
+   |               |The grass healthy is green|
+   |			   |The spectral value of grass healthy is higher than that of the grass stressed|
+   |  mixed ground surface |A hyperspectral and lidar multimodal data of mixed ground surface|
+   |			   |The mixed ground surface is yellow and green|
+   |               |The mixed ground surface appears next to the tree|
+   |			   |The mixed ground surface appears next to the sidewalk|
+   | dirt and sand  |A hyperspectral and lidar multimodal data of dirt and sand|
+   |			   |The bare earth is tan|
+   |               |The shape of the dirt and sand is irregular|
+   |			   |The surface of dirt and sand is not smooth|
+   |   road   |A hyperspectral and lidar multimodal data of road|
+   |			   |Trees grew along the road|
+   |               |The building and building shadow are next to road|
+   |			   |The road appear as elongated strip shape|
+   |   water     |A hyperspectral and lidar multimodal data of water|
+   |			   |The water has a smooth surface|
+   |               |Trees grew along the water |
+   |			   |The water appears black|
+   |  building shadow   |A hyperspectral and lidar multimodal data of building shadow|
+   |			   |The building shadow next to buildings|
+   |               |The building shadow appears black|
+   |			   |The building shadow is behind the building to the right|
+   | building|A hyperspectral and lidar multimodal data of building|
+   |			   |Building is densely packed|
+   |               |Building appears as small blocks|
+   |			   |There are trees near the building|
+   |  sidewalk   |A hyperspectral and lidar multimodal data of sidewalk|
+   |			   |Sidewalk is parallel to road|
+   |               |Sidewalk is located near roads and buildings|
+   |			   |The distribution of sidewalks is irregular|
+   | yellow curb |A hyperspectral and lidar multimodal data of yellow curb|
+   |			   |Yellow curb is parallel to road|
+   |               |Yellow curb is yellow|
+   |			   |Yellow curb are located near roads and sidewalks|
+   |  cloth panels  |A hyperspectral and lidar multimodal data of cloth panels|
+   |			   |Cloth panels are four regular rectangles|
+   |               |Cloth panels cover the mixed ground surface|
+   |			   |Cloth panels are located next to the trees|
