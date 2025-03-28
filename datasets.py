@@ -1,0 +1,213 @@
+# -*- coding: utf-8 -*-
+
+import numpy as np
+import torch
+import torch.utils
+import torch.utils.data
+
+def get_dataset(dataset_name):
+    """ Gets the dataset specified by name and return the related components.
+    Args:
+        dataset_name: string with the name of the dataset
+    Returns:
+        label_values: list of class names
+        label_queue: prompt of class
+    """
+
+    if dataset_name == 'Trento':
+        label_values = ["apple trees", "buildings", "ground", "woods", "vineyard", "road"]
+        label_queue = {
+            "apple trees": ['The apple trees appear khaki and green',
+                           "The height of apple trees is lower than that of niveyard",
+                           'There is ground in the middle of the gap between apple trees'],
+            "buildings":  ['The distance between the ground and buildings is greater than the distance between the road and buildings',
+                           'The buildings are well spaced',
+                           'The height of buildings is close to the woods'],
+            "ground":     ['The ground occurs next to apple trees',
+                           'The length of the ground is shorter than the length of the road',
+                           'The ground has the lowest height'],
+            "woods":      ['The woods appear as small circles',
+                           'The woods are dark green',
+                           'The height of woods has a clear fluctuation trend in the local area'],
+            "vineyard":   ['Vineyard is a regular rectangle or square',
+                           'Vineyard and apple trees are far away',
+                           'The spectral values of the vineyard and apple trees are close'],
+            "road":       ['Trees grew along the road',
+                           'The buildings are next to road',
+                           'The road appear as elongated strip shape']}
+
+    elif dataset_name == 'Houston13':
+        label_values = ["grass healthy", "grass stressed", "grass synthetic", "trees", "soil", "water", "residential",
+                        "commercial", "road", "highway", "railway", "parking lot 1", "parking lot 2", "tennis court", "running track"]
+        label_queue = {"grass healthy": ['The grass healthy is next to the road',
+                                        'The grass healthy is dark green',
+                                         'The spectral value of grass healthy is higher than that of the grass stressed'],
+                    "grass stressed":['The grass stressed is closer to the road and parking lots',
+                                      'The grass stressed is pale green',
+                                      'The shape of the grass stressed is irregular'],
+                    "grass synthetic":['The grass synthetic is located inside the running track',
+                                       'The shape of grass synthetic is a fixed-size rectangle',
+                                       'The spectrak value transformation interval of grass synthetic is small'],
+                    "trees":['The trees beside road',
+                             'The trees appear as small circles',
+                             'Trees are higher than grass'],
+                    "soil":['The sail is tan',
+                             'The shape of the soil is irregular',
+                             'The surface of soil is not smooth'],
+                    "water":['The water has a smooth surface',
+                             'Trees grew along the water',
+                             'The water appears dark blue or black'],
+                    "residential":['Residential are densely packed',
+                                   'Residential buildings appear as small blocks',
+                                   'There are trees near the residential'],
+                    "commercial":['The shapes of commercial are inconsistent',
+                                  'Commercial appear as large blocks',
+                                  'There are parking lot 1 and parking lot 2 near the commercial'],
+                   "road": ['Trees grew along the road',
+                            'The road appear as elongated strip shape',
+                            'Roads are narrower than highways and railways'],
+                    "highway": ['The highway is strip-shaped',
+                                'Cars on the highway are discontinuous',
+                                'Highways are wider than railways'],
+                    "railway": ['The railway is strip-shaped',
+                                'The curvature of the railway is smooth',
+                                'Trains on the railway are continuous'],
+                    "parking lot 1": ['The area of parking lot 1 is empty',
+                                      'The parking lot 1 is next to the road',
+                                      'the parking lot 1 is near buildings'],
+                    "parking lot 2": ['The colors of parking lot 2 are messed up',
+                                      'The parking lot 2 is next to the road',
+                                      'the parking lot 2 is near buildings'],
+                    "tennis court":['There is also a crimson running track next to the tennis court',
+                                    'The height is close to the running track',
+                                    'Tennis court is a regular rectangle'],
+                    "running track":['The running track is an ellipse',
+                                     'The running track is crimson',
+                                     'There is grass synthetic in the middle of the running track']}
+
+    elif dataset_name == 'Houston18':
+        label_values = ["grass healthy", "grass stressed", "artificial turf", "evergreen trees", "deciduous trees",
+                        "bare earth", "water", "residential buildings", "non-residential buildings", "roads",
+                        "sidewalks", "crosswalks", "major thoroughfares", "highway", "railway",
+                        "paved parking lots", "unpaved parking lots", "cars", "trains", "stadium seats"]
+        label_queue = {"grass healthy": ['The grass healthy is next to the road',
+                                        'The grass healthy is dark green',
+                                         'The spectral value of grass healthy is higher than that of the grass stressed'],
+                    "grass stressed":['The grass stressed is closer to the road and parking lots',
+                                      'The grass stressed is pale green',
+                                      'The shape of the grass stressed is irregular'],
+                    "artificial turf":['The artificial turf is located inside the running track',
+                                       'The shape of artificial turf is a fixed-size rectangle',
+                                       'The spectrak value transformation interval of artificial turf is small'],
+                    "evergreen trees":['The evergreen trees beside road',
+                                       'The evergreen trees appear as small circles',
+                                       'The evergreen trees is dark green'],
+                    "deciduous trees":['The trees beside road',
+                                       'The trees appear as small circles',
+                                       'The deciduous trees is yellowish-brown'],
+                    "bare earth":['The bare earth is tan',
+                                 'The shape of the bare earth is irregular',
+                                 'The surface of bare earth is not smooth'],
+                    "water":['The water has a smooth surface',
+                             'Trees grew along the water',
+                             'The water appears dark blue or black'],
+                    "residential buildings":['Residential buildings are densely packed',
+                                             'Residential buildings appear as small blocks',
+                                             'There are trees near the residential buildings'],
+                    "non-residential buildings":['The shapes of non-residential buildings are inconsistent',
+                                                 'Non-residential buildings appear as large blocks',
+                                                 'There are paved parking lots and unpaved parking lots near the non-residential buildings'],
+                    "roads": ['Trees grew along the road',
+                            'The road appear as elongated strip shape',
+                            'Roads are narrower than highways and railways'],
+                    "sidewalks":['Sidewalks are parallel to road and major thoroughfares',
+                                 'Sidewalks are located near roads , major thoroughfares, and buildings',
+                                 'The distribution of sidewalks is irregular'],
+                    "crosswalks":['Crosswalks are lcoated above the road and major thoroughfares',
+                                  'Crosswalks are perpendicular to roads and major thoroughfares',
+                                  'Crosswalks connect two sidewalks'],
+                    "major thoroughfares":['Major thoroughfares are border road and highway',
+                                           'Major thoroughfares are wider than road',
+                                           'Major thoroughfares are rarely bend'],
+                    "highway": ['The highway is strip-shaped',
+                                'The highway and major thoroughfares cross',
+                                'The highway and railway do not cross'],
+                    "railway": ['The railway is strip-shaped',
+                                'The curvature of the railway is smooth',
+                                'Trains on the railway are continuous'],
+                    "paved parking lots": ['The paved parking lots are strip shape',
+                                           'The paved parking lots are next to the road',
+                                           'the paved parking lots are near buildings'],
+                    "unpaved parking lots": ['The colors of parking lot 2 are messed up',
+                                             'Unpaved parking lots are next to the road',
+                                             'The erea of unpaved parking lots is small'],
+                    "cars":['The cars are next to the paved parking lots',
+                            'The cars are next to the non-residential buildings',
+                            'The cars are discontinuous'],
+                    "trains":['The trains are strip shape',
+                              'The trains are next to the railway',
+                              'The trains are continuous'],
+                    "stadium seats":['There is artificial turf in the middle of the stadium seats',
+                                     'The height of stadium seats is much higher than that of artificial turf',
+                                     'The stadium seats are an ellipse']}
+
+    elif dataset_name == 'MUUFL':
+        label_values = ["tree", "mostly grass", "mixed ground surface", "dirt and sand", "road","water",
+                        "building shadow", "building", "sidewalk", "yellow curb", "cloth panels"]
+        label_queue = {
+            "tree": ['The trees beside road',
+                      'The trees appear as small circles',
+                      'Trees are higher than grass'],
+            "mostly grass": ['The mostly grass is next to the road',
+                              'The grass healthy is green',
+                              'The spectral value of grass healthy is higher than that of the grass stressed'],
+            "mixed ground surface": ['The mixed ground surface is yellow and green',
+                                    'The mixed ground surface appears next to the tree',
+                                    'The mixed ground surface appears next to the sidewalk'],
+            "dirt and sand": ['The bare earth is tan',
+                              'The shape of the dirt and sand is irregular',
+                              'The surface of dirt and sand is not smooth'],
+            "road": ['Trees grew along the road',
+                     'The building and building shadow are next to road',
+                     'The road appear as elongated strip shape'],
+            "water": ['The water has a smooth surface',
+                      'Trees grew along the water',
+                      'The water appears black'],
+            "building shadow": ['The building shadow next to buildings',
+                                'The building shadow appears black',
+                                'The building shadow is behind the building to the right'],
+            "building": ['Building is densely packed',
+                         'Building appears as small blocks',
+                         'There are trees near the building'],
+            "sidewalk": ['Sidewalk is parallel to road',
+                         'Sidewalk is located near roads and buildings',
+                         'The distribution of sidewalks is irregular'],
+            "yellow curb": ['Yellow curb is parallel to road',
+                            'Yellow curb is yellow ',
+                            'Yellow curb are located near roads and sidewalkr'],
+            "cloth panels": ['Cloth panels are four regular rectangles',
+                             'Cloth panels cover the mixed ground surface',
+                             'Cloth panels are located next to the trees']}
+
+    elif dataset_name == 'GRSS07':
+        label_values = ["city center", "residential areas", "sparse building", "water", "vegetation"]
+        label_queue = {
+                       "city center": ['City center is densely packed',
+                                       'City center appear as small blocks',
+                                       'The shapes of city center are consistent'],
+                       "residential areas": ['There is vegetation near the residential areas',
+                                             'The spectral values of residential areas and sparse building are close',
+                                             'Residential areas surround the city center'],
+                       "sparse building": ['Sparse buildings are far from the city center',
+                                           'The contact area between sparse building and residential areas is the largest',
+                                           'There is vegetation near the residential areas'],
+                       "water": ['The water has a smooth surface',
+                                 'Trees grew along the water',
+                                 'The water appears black'],
+                       "vegetation": ['Vegetation is a regular rectangle or square',
+                                      'Vegetation are far away the city center',
+                                      'The spectral values of the vegetation and residential areas are quite different'],
+                       }
+                    
+
+    return label_values, label_queue
