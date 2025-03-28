@@ -1,7 +1,5 @@
 # FusDreamer
-Official implementation of "A label-efficient remote sensing world model for multimodal data fusion"
-
-The corresponding code will be released.
+Official implementation of "A label-efficient remote sensing world model for multimodal data fusion, IEEE TGRS 2025. DOI: 10.1109/TGRS.2025.3554862"
 
 ## The designed prompts in this paper.
 
